@@ -22,8 +22,8 @@ const NavItem = styled(NavLink)`
   position: relative;
   font-size: .9rem;
   transition: 1s color ease;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-weight: 600;
+  letter-spacing: 1px;
   line-height: 30px;
 
   &::before {
@@ -46,14 +46,14 @@ const NavItem = styled(NavLink)`
   }
 
   &.active {
-    color: white;
+    color: ${(props) => props.color};
     &::before {
       background-color: ${(props) => props.color};
       width: 100%;
     }
   }
 
-  @media (max-width: 834px) {
+  @media (max-width: 934px) {
     &::before {
       display: none;
     }

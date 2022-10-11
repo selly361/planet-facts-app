@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import Header from './components/Layout/Header/Header';
-import Main from './components/Layout/Main/Main';
+import Home from './pages/Home/Home';
 import Planet from './pages/Planet/Planet';
 import React from 'react';
 import Wrapper from './components/Wrapper/Wrapper';
@@ -11,7 +11,8 @@ function App() {
    <Wrapper>
     <Header />
     <Routes>
-      <Route path="/:planet" element={<Planet />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/:planetName" element={<Planet />} />
     </Routes>
    </Wrapper>
   );

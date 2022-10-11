@@ -10,13 +10,10 @@ const StyledHeader = styled.header`
   padding: 0 2rem;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);    
   
   
-  @media (max-width: 834px){
+  @media (max-width: 934px){
     flex-flow: column;
     height: 25vh;
   }
@@ -33,7 +30,7 @@ const Header = () => {
   
   return (
     <StyledHeader>
-        <NavTitle to="/mercury">THE PLANETS</NavTitle>
+        <NavTitle to="/">THE PLANETS</NavTitle>
         <NavItems />
     </StyledHeader>
   )
