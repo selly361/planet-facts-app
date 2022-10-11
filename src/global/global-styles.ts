@@ -8,9 +8,10 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-tap-highlight-color: none;
     }
 
-    body {
+    body, #root {
         width: 100vw;
         min-height: 100vh;
+        overflow-x: hidden;
     }
 
     a {

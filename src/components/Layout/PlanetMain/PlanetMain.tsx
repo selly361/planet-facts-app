@@ -1,38 +1,59 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState } from "react";
 
-import PlanetImage from '../../Planet/PlanetImage/PlanetImage';
-import { planets } from '../../../global/theme';
-import planetsData from '../../../data/data.json'
+import PlanetImage from "./PlanetImage/PlanetImage";
+import PlanetTabInfo from "./PlanetTabInfo/PlanetTabInfo";
+import { planets } from "../../../global/theme";
+import planetsData from "../../../data/data.json";
 import styled from "styled-components";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 const StyledMain = styled.main`
-    width: 80vw;
-    min-height: 85vh;
-    border: 1px solid black;
-    margin: auto;
-
-      
-  @media (max-width: 934px){
+  width: 90vw;
+  height: max-content;
+  margin: auto;
+  padding-top: 5rem;
+  
+  @media (max-width: 934px) {
     flex-flow: column;
     min-height: 75vh;
   }
-`
+`;
 
-
+const PlanetContent = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 10rem;
+`;
 
 const Main = () => {
-  const [status, setStatus] = useState("planet")
-  const { planetName } = useParams()
+  const [status, setStatus] = useState("planet");
+  const { planetName } = useParams();
 
-  let planetDesign = planets.find(planet => planet.name === planetName)
-  let planetData: any = planetsData.find(planet => planet.name.toLowerCase() === planetName)
-  
+  let planetData: any = planetsData.find(
+    (planet) => planet.name.toLowerCase() === planetName
+  );
+
+
   return (
     <StyledMain>
-      <PlanetImage image={planetData?.images[status]} />
-    </StyledMain>
-  )
-}
+      <PlanetContent>
+        <PlanetImage
+          saturn={planetName || ""}
+          status={status}
+          images={planetData?.images}
+        />
 
-export default Main
+        <PlanetTabInfo
+          name={planetData.name}
+          description={planetData[status === "planet" ? "overview" : status === "internal" ? "structure" : status]}
+          status={status}
+          setStatus={setStatus}
+          images={planetData?.images}
+        />
+      </PlanetContent>
+    </StyledMain>
+  );
+};
+
+export default Main;

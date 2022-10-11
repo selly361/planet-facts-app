@@ -8,11 +8,11 @@ interface PropTypes {
 }
 
 const StyledWrapper = styled.main`
-  min-height: 100vh;
+  height: 120vh;
   width: 100vw;
   background-image: url('background-stars.svg');
   background-color: ${({ theme }) => theme.colors.black};
-  background-size: cover;
+  background-size: contain;
 `;
 
 const Wrapper = ({ children }: PropTypes) => {
