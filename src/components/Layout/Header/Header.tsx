@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);    
   
   
-  @media (max-width: 934px){
+  @media (max-width: 1050px){
     flex-flow: column;
     height: 25vh;
   }

@@ -53,7 +53,7 @@ const NavItem = styled(NavLink)`
     }
   }
 
-  @media (max-width: 934px) {
+  @media (max-width: 1050px) {
     &::before {
       display: none;
     }

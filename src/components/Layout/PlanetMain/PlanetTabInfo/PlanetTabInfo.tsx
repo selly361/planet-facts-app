@@ -25,6 +25,13 @@ const Wrapper = styled.div`
   width: 350px;
   margin-right: 4rem;
   gap: 1rem;
+
+  @media (max-width: 1050px){
+    width: 100%;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 const StyledArticle = styled.article`
@@ -32,7 +39,12 @@ const StyledArticle = styled.article`
   flex-flow: column;
   gap: 1.5rem;
   width: 100%;
-  height: 340px;
+
+
+  @media (max-width: 1050px){
+    width: 400px;;
+  }
+
 `;
 
 const PlanetName = styled.h1<{ mask: string }>`
@@ -66,6 +78,11 @@ const TabWrapper = styled.ul`
   display: grid;
   gap: 1rem;
   list-style: none;
+
+  @media (max-width: 1050px){
+    height: 65%;
+    width: 300px;
+  }
 `;
 
 const Tab = styled.button<{ color: (string | undefined) }>`
@@ -100,6 +117,12 @@ const Tab = styled.button<{ color: (string | undefined) }>`
 const PlanetDesc = styled.p`
   color: ${({ theme }) => theme.colors.grayLight};
   font-family: ${({ theme }) => theme.fonts.primary};
+  height: 150px;
+
+
+  @media (max-width: 1050px){
+    height: max-content;
+  }
 `;
 
 const PlanetTabInfo = ({
