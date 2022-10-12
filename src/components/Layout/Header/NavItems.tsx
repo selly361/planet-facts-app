@@ -56,7 +56,12 @@ const NavItem = styled(NavLink)`
   @media (max-width: 1050px) {
     &::before {
       display: none;
+      
     }
+
+     & {
+      font-size: .7rem;
+     }
   }
 `;
 

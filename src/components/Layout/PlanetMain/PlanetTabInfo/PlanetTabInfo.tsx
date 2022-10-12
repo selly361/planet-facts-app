@@ -42,7 +42,7 @@ const StyledArticle = styled.article`
 
 
   @media (max-width: 1050px){
-    width: 400px;;
+    width: 330px;;
   }
 
 `;
@@ -81,7 +81,7 @@ const TabWrapper = styled.ul`
 
   @media (max-width: 1050px){
     height: 65%;
-    width: 300px;
+    width: 250px;
   }
 `;
 
@@ -110,6 +110,14 @@ const Tab = styled.button<{ color: (string | undefined) }>`
     color: hsla(0,0%,100%,0.5);
     
   }
+
+  @media (max-width: 1050px){
+     & {
+      font-size: .6rem;
+      justify-content: flex-start;
+      gap: 1rem;
+     }
+  }
 `;
 
 
@@ -122,6 +130,7 @@ const PlanetDesc = styled.p`
 
   @media (max-width: 1050px){
     height: max-content;
+    font-size: .9rem;
   }
 `;
 

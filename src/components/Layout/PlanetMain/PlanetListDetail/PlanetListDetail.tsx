@@ -17,6 +17,9 @@ const ListWrapper = styled.ul`
   gap: 2rem;
   margin-top: 2rem;
 
+  @media (max-width: 1050px){
+    height: max-content;
+    }
   
 `;
 
@@ -26,6 +29,13 @@ const DetailListItem = styled.li`
   flex-flow: column;
   gap: 1rem;
   padding: 1rem;
+
+
+  @media (max-width: 1050px){
+    padding: .5rem;
+    gap: .5rem;
+    padding-left: .8rem;
+    }
 `;
 
 const Label = styled.p`
@@ -41,6 +51,10 @@ const Value = styled.h4`
     color: white;
     font-weight: bold;
     font-family: ${({theme}) => theme.fonts.secondary};
+
+    @media (max-width: 1050px){
+      font-size: 1.7rem;
+    }
 `
 
 const PlanetListDetail = ({

@@ -16,6 +16,8 @@ const StyledHeader = styled.header`
   @media (max-width: 1050px){
     flex-flow: column;
     height: 25vh;
+    padding-top: 1rem;
+    
   }
 `
 
@@ -24,6 +26,11 @@ const NavTitle = styled(Link)`
   font-weight: bold;
   color: white;
   font-size: 2rem;
+
+  @media (max-width: 1050px){
+    font-size: 1.5rem;    
+    letter-spacing: 1.5px;
+  }
 `
 
 const Header = () => {
