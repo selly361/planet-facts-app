@@ -21,6 +21,10 @@ const ListWrapper = styled.ul`
     height: max-content;
     }
   
+  @media (max-width: 730px){
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
 `;
 
 const DetailListItem = styled.li`
@@ -31,10 +35,16 @@ const DetailListItem = styled.li`
   padding: 1rem;
 
 
-  @media (max-width: 1050px){
+  @media (max-width: 1050px) and (min-width: 730px){
     padding: .5rem;
     gap: .5rem;
     padding-left: .8rem;
+    }
+
+    @media (max-width: 730px){
+      flex-flow: row;
+      justify-content: space-between;
+      align-items: center;
     }
 `;
 
@@ -43,6 +53,11 @@ const Label = styled.p`
     color: hsl(240,6%,54%);
     font-weight: bold;
     font-size: .7rem;
+
+        
+    @media (max-width: 730px){
+      font-size: .6rem;
+    }
 `
 
 
@@ -53,7 +68,12 @@ const Value = styled.h4`
     font-family: ${({theme}) => theme.fonts.secondary};
 
     @media (max-width: 1050px){
-      font-size: 1.7rem;
+      font-size: 1.3rem;
+    }
+
+    
+    @media (max-width: 730px){
+      font-size: 1.2rem;
     }
 `
 

@@ -23,12 +23,13 @@ const StyledMain = styled.main`
 const PlanetContent = styled.div`
   width: 100%;
   display: flex;
-  justify-content: end;
-  gap: 10rem;
+  justify-content: center;
+  gap: 13rem;
 
 
   @media (max-width: 1050px){
     flex-flow: column;
+    gap: 1rem;
   }
 `;
 

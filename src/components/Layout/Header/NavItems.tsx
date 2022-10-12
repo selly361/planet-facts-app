@@ -63,6 +63,11 @@ const NavItem = styled(NavLink)`
       font-size: .7rem;
      }
   }
+
+
+  @media (max-width: 730px){
+    display: none;
+  }
 `;
 
 const NavItems = () => {

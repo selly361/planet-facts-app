@@ -19,6 +19,12 @@ const StyledHeader = styled.header`
     padding-top: 1rem;
     
   }
+
+  @media (max-width: 730px){
+    flex-flow: row;
+    height: 15vh;
+    padding-top: 0;
+  }
 `
 
 const NavTitle = styled(Link)`

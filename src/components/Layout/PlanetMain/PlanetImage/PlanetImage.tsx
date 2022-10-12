@@ -22,6 +22,15 @@ const Wrapper = styled.div`
   flex-flow: column;
   align-items: center;
   height: 400px;
+
+
+  @media (max-width: 730px){
+    justify-content: end;
+    height: max-content;
+    width: max-content;
+    margin: auto;
+  }
+
 `;
 
 const GeologyImage = styled.img`
@@ -41,6 +50,11 @@ const Image = styled.img`
   &.saturn {
     height: 500px;
     width: 500px;
+  }
+
+  @media (max-width: 730px){
+    height: 200px;
+    width: 200px;
   }
 `;
 

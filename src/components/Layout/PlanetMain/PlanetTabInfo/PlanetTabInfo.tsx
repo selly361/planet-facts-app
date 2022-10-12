@@ -45,6 +45,11 @@ const StyledArticle = styled.article`
     width: 330px;;
   }
 
+  @media (max-width: 730px){
+    width: 100%;
+    text-align: center;
+  }
+
 `;
 
 const PlanetName = styled.h1<{ mask: string }>`
@@ -59,6 +64,10 @@ const PlanetName = styled.h1<{ mask: string }>`
   -webkit-background-clip: text;
   background-position: center;
   background-size: 700px;
+
+  @media (max-width: 730px){
+    font-size: 4rem;
+  }
 `;
 
 const Source = styled.span`
@@ -83,9 +92,22 @@ const TabWrapper = styled.ul`
     height: 65%;
     width: 250px;
   }
+
+  @media (max-width: 730px){
+    position: absolute;
+    top: 15vh;
+    width: 100vw;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+    height: max-content;
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 
-const Tab = styled.button<{ color: (string | undefined) }>`
+const Tab = styled.button<{ color: (string | undefined), activeColor: (string) }>`
   display: flex;
   padding: 1rem;
   justify-content: space-between;
@@ -94,7 +116,6 @@ const Tab = styled.button<{ color: (string | undefined) }>`
   align-items: center;
   cursor: pointer;
   background-color: ${props => props.color || "transparent"};
-  border: 1px solid hsla(0, 0%, 100%, 0.2);
 
   &:hover {
   background-color: ${({theme}) => theme.colors.grayLight};
@@ -118,6 +139,25 @@ const Tab = styled.button<{ color: (string | undefined) }>`
       gap: 1rem;
      }
   }
+  @media (max-width: 730px){
+    transition: 1s color ease, 1s border ease;
+    border: none;
+    border-bottom: 4px solid ${props => props.color || "transparent"};
+    font-family: ${({theme}) => theme.fonts.primary};
+    color: hsl(240,6%,54%);
+    font-size: .5rem;
+    font-weight: 700;
+    color:  ${props => props.activeColor};
+    
+    &:hover, & {
+    background-color: transparent;
+    }
+
+    li {
+      display: none;
+    }
+  }
+
 `;
 
 
@@ -132,6 +172,11 @@ const PlanetDesc = styled.p`
     height: max-content;
     font-size: .9rem;
   }
+
+  @media (max-width: 730px){
+    text-align: center;
+  }
+
 `;
 
 const PlanetTabInfo = ({
@@ -170,7 +215,7 @@ const PlanetTabInfo = ({
       </StyledArticle>
       <TabWrapper>
         {tabs.map((tab, i) => (
-          <Tab key={tab.label} color={status === tab.tabStatus ? planetDesign?.sectionColor : ""} onClick={() => setStatus(tab.tabStatus)}>
+          <Tab key={tab.label} activeColor={status === tab.tabStatus ? "white" : ""} color={status === tab.tabStatus ? planetDesign?.sectionColor : ""} onClick={() => setStatus(tab.tabStatus)}>
             <li>0{i + 1}</li> {tab.label}
           </Tab>
         ))}
