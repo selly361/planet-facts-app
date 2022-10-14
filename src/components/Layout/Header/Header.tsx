@@ -22,7 +22,8 @@ const StyledHeader = styled.header`
 
   @media (max-width: 730px){
     flex-flow: row;
-    height: 15vh;
+    height: 80px;
+    align-items: center;
     padding-top: 0;
   }
 `

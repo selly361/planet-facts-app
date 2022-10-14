@@ -95,7 +95,7 @@ const TabWrapper = styled.ul`
 
   @media (max-width: 730px){
     position: absolute;
-    top: 15vh;
+    top: 80px;
     width: 100vw;
     margin: auto;
     left: 0;
@@ -103,7 +103,7 @@ const TabWrapper = styled.ul`
     border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
     height: max-content;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 `;
 
@@ -116,6 +116,7 @@ const Tab = styled.button<{ color: (string | undefined), activeColor: (string) }
   align-items: center;
   cursor: pointer;
   background-color: ${props => props.color || "transparent"};
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
 
   &:hover {
   background-color: ${({theme}) => theme.colors.grayLight};

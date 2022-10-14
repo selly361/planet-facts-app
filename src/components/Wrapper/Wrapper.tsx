@@ -8,7 +8,7 @@ interface PropTypes {
 }
 
 const StyledWrapper = styled.main`
-  min-height: max-content;
+  min-height: 100vh;
   width: 100vw;
   background-image: url('background-stars.svg');
   background-color: ${({ theme }) => theme.colors.black};
